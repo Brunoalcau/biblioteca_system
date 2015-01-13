@@ -24,7 +24,7 @@
 		<div class="row">
 			<fs-row label="Género: ">
 		      <div class="col-xs-4">
-		        <div fs-select="" freetext="true" items="generos" ng-disabled="disabled" ng-model="livro.autor">
+		        <div fs-select="" freetext="true" items="generos" ng-disabled="disabled" ng-model="livro.genero">
 		          {{item.nome}}
 		        </div>
 		      </div>
@@ -34,8 +34,8 @@
 	        </fs-row>
         </div>
 		<div class="modal-footer">
-			<button type="button" class="btn btn-default" ng-click="close()">Fechar</button>
-			<button ng-disabled="form.$invalid" ng-show="campanha.situacao === 'NOVO'"  class="btn btn-success btn-sm"  ng-click="salvar()">Salvar</button>
+			<!-- <button type="button" class="btn btn-default" ng-click="close()">Fechar</button> -->
+			<button class="btn btn-success btn-sm"  ng-click="salvar()">Salvar</button>
 		</div>
 		{{livro}}
 	</fs-form-for>

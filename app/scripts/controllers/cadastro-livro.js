@@ -12,4 +12,9 @@ angular.module('bibliotecasSystemApp')
     $scope.autores = [{
     	id:1,nome:'bruno'
     }];
+
+    $scope.generos = [{
+    	id:1,nome:' Romance'
+    }];
+
   });
