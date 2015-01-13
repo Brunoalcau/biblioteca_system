@@ -351,9 +351,36 @@ module.exports = function (grunt) {
         configFile: 'test/karma.conf.js',
         singleRun: true
       }
+    },
+    deploy:{
+      dev : {
+        db:'http://localhost:5984/biblioteca_system'
+      },
+      prod:{
+        db:'https://brunoalcau:503810kaju@brunoalcau.cloudant.com/biblioteca'
+      }
     }
   });
 
+  grunt.registerMultiTask('deploy','deploy da aplicacao via push couchapp',function(){
+    var 
+      done = this.async(),
+      processo = require('child_process'),
+      config = grunt.config('deploy')[this.target],
+      nomeArquivo = 'couchapp.'+this.target+'.conf.js',
+      comando = 'node_modules/couchapp/bin.js push ' + nomeArquivo + ' ' + config.db;
+    // ;
+    // console.log(config.db);
+    console.log(comando);
+    processo.exec(comando,function(err,stdout){
+      grunt.log.write(stdout);
+      done(err);
+    });
+  });
+
+  // grunt.registerTask('deploy','',function(){
+  //   console.log('teste');
+  // });
 
   grunt.registerTask('serve', 'Compile then start a connect web server', function (target) {
     if (target === 'dist') {
