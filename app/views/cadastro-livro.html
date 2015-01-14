@@ -5,7 +5,7 @@
 		<fs-input as="text" name="isbn" required="" label="ISBN: " placeholder="Digite o nome do ISBN"></fs-input>
 		<fs-input as="text" name="cdd" required="" label="CDD: " placeholder="Digite o nome do CDD"></fs-input>
 		<fs-input as="text" name="edicao" required="" label="Edição: " placeholder="Digite o nome do Edição"></fs-input>
-		<fs-input as="text" name="numerodetombo" required="" label="Numero de tombo: " placeholder="Digite o nome do numero de tombo">
+		<fs-input as="number" name="numerodetombo" required="" label="Numero de tombo: " placeholder="Digite o nome do numero de tombo">
 		</fs-input>
 		<div class="row">
 			<fs-row label="Autor: ">
@@ -31,6 +31,10 @@
 		      </button>
 	        </fs-row>
 	    </div>
-		<button class="btn btn-success btn-sm"  ng-click="salvar()">Salvar</button>
+	    <div class="modal-footer">
+	    	<button class="btn btn-success btn-sm"  ng-click="salvar()">
+	    		Salvar
+	    	</button>
+	    </div>	
 	</fs-form-for>
 </div>
