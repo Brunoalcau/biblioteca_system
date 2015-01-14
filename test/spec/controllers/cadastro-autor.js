@@ -6,13 +6,15 @@ describe('Controller: CadastroAutorCtrl', function () {
   beforeEach(module('bibliotecasSystemApp'));
 
   var CadastroAutorCtrl,
-    scope;
+    scope,
+    modalInstance;
 
   // Initialize the controller and a mock scope
   beforeEach(inject(function ($controller, $rootScope) {
     scope = $rootScope.$new();
     CadastroAutorCtrl = $controller('CadastroAutorCtrl', {
-      $scope: scope
+      $scope: scope,
+      $modalInstance : modalInstance
     });
   }));
 
