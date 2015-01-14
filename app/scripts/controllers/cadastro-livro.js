@@ -8,7 +8,9 @@
  * Controller of the bibliotecasSystemApp
  */
 angular.module('bibliotecasSystemApp')
-  .controller('CadastroLivroCtrl', function ($scope) {
+  .controller('CadastroLivroCtrl', function ($scope,modal) {
+    
+
     $scope.autores = [{
     	id:1,nome:'bruno'
     }];
@@ -16,5 +18,16 @@ angular.module('bibliotecasSystemApp')
     $scope.generos = [{
     	id:1,nome:' Romance'
     }];
+
+    $scope.openDialogAutor = function(){
+    	modal.dialogAutor();
+    };
+    
+    $scope.openDialogGenero = function(){
+        modal.dialogGenero();
+    };
+    $scope.close = function(){
+        modal.close();
+    }
 
   });

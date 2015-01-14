@@ -18,6 +18,7 @@ angular
     'ngTouch',
     'formstamp',
     'ui.bootstrap'
+    // 'mgcrea.ngStrap'
   ])
   .config(function ($routeProvider) {
     $routeProvider
@@ -32,6 +33,14 @@ angular
       .when('/cadastro-livro', {
         templateUrl: 'views/cadastro-livro.html',
         controller: 'CadastroLivroCtrl'
+      })
+      .when('/cadastro-autor', {
+        templateUrl: 'views/cadastro-autor.html',
+        controller: 'CadastroAutorCtrl'
+      })
+      .when('/cadastro-genero', {
+        templateUrl: 'views/cadastro-genero.html',
+        controller: 'CadastroGeneroCtrl'
       })
       .otherwise({
         redirectTo: '/'

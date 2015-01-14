@@ -1,14 +1,12 @@
-<div class="modal-header">
-    <h3 class="modal-title">Cadastro de livro/Revista</h3>
-</div>	
-<div class="modal-body">
+<div class="row">
 	<fs-form-for model="livro">
 		<fs-input as="text" name="nome" required="" label="Descrição: " placeholder="Digite o nome da descrição"></fs-input>
 		<fs-input as="text" name="titulo" required="" label="Título: " placeholder="Digite o nome da título"></fs-input>
 		<fs-input as="text" name="isbn" required="" label="ISBN: " placeholder="Digite o nome do ISBN"></fs-input>
 		<fs-input as="text" name="cdd" required="" label="CDD: " placeholder="Digite o nome do CDD"></fs-input>
 		<fs-input as="text" name="edicao" required="" label="Edição: " placeholder="Digite o nome do Edição"></fs-input>
-		<fs-input as="text" name="numerodetombo" required="" label="Numero de tombo: " placeholder="Digite o nome do numero de tombo"></fs-input>
+		<fs-input as="text" name="numerodetombo" required="" label="Numero de tombo: " placeholder="Digite o nome do numero de tombo">
+		</fs-input>
 		<div class="row">
 			<fs-row label="Autor: ">
 		      <div class="col-xs-4">
@@ -16,11 +14,11 @@
 		          {{item.nome}}
 		        </div>
 		      </div>
-		      <button type="button" class="btn btn-success" ng-click="">
+		      <button type="button" class="btn btn-success"  ng-click="openDialogAutor()">
 		      	<i class="glyphicon glyphicon-plus"></i>
 		      </button>
 	        </fs-row>
-        </div>
+	    </div>
 		<div class="row">
 			<fs-row label="Género: ">
 		      <div class="col-xs-4">
@@ -28,15 +26,11 @@
 		          {{item.nome}}
 		        </div>
 		      </div>
-		      <button type="button" class="btn btn-success" ng-click="">
+		      <button type="button" class="btn btn-success" ng-click="openDialogGenero()">
 		      	<i class="glyphicon glyphicon-plus"></i>
 		      </button>
 	        </fs-row>
-        </div>
-		<div class="modal-footer">
-			<!-- <button type="button" class="btn btn-default" ng-click="close()">Fechar</button> -->
-			<button class="btn btn-success btn-sm"  ng-click="salvar()">Salvar</button>
-		</div>
-		{{livro}}
+	    </div>
+		<button class="btn btn-success btn-sm"  ng-click="salvar()">Salvar</button>
 	</fs-form-for>
 </div>

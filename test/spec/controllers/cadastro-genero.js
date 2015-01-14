@@ -1,17 +1,17 @@
 'use strict';
 
-describe('Controller: MainCtrl', function () {
+describe('Controller: CadastroGeneroCtrl', function () {
 
   // load the controller's module
   beforeEach(module('bibliotecasSystemApp'));
 
-  var MainCtrl,
+  var CadastroGeneroCtrl,
     scope;
 
   // Initialize the controller and a mock scope
   beforeEach(inject(function ($controller, $rootScope) {
     scope = $rootScope.$new();
-    MainCtrl = $controller('MainCtrl', {
+    CadastroGeneroCtrl = $controller('CadastroGeneroCtrl', {
       $scope: scope
     });
   }));
