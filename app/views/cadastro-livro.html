@@ -19,9 +19,9 @@
 		      </button>
 	        </fs-row>
 	    </div>
-		<div class="row">
+		<div class="form-group">
 			<fs-row label="Género: ">
-		      <div class="col-xs-4">
+		      <div class="btn-group col-xs-4">
 		        <div fs-select="" freetext="true" items="generos" ng-disabled="disabled" ng-model="livro.genero">
 		          {{item.nome}}
 		        </div>
@@ -31,6 +31,30 @@
 		      </button>
 	        </fs-row>
 	    </div>
+	    <div class="form-group">
+			<div class="btn-group col-xs-4">
+				<label required="" class="btn btn-success" ng-model="livro.tipo" btn-radio="true">
+					Livro
+				</label>
+				<label  required="" class="btn btn-danger" ng-model="livro.tipo" btn-radio="false">
+					Revista
+				</label>
+			</div>
+
+		</div>
+	    <div  collapse="livro.tipo" class="panel panel-default" >
+	    	<div class="panel-body" >
+	    		<fs-input as="number" name="ano" required="" label="Ano de publicação: " placeholder="Digite o ano de publicação"></fs-input>
+	    		<fs-input as="number" name="issn" required="" label="ISSN: " placeholder="Digite o ISSN"></fs-input>
+	    		<fs-input as="number" name="numeroRevista" required="" label="Numero daa revista: " placeholder="Digite o ano de publicação"></fs-input>
+	    	</div>
+	    		<div class="modal-footer">
+	    			<button type="button" class="btn btn-success" ng-click="">
+		      			Adicionar Artigos
+		      			<i class="glyphicon glyphicon-plus"></i>
+		      		</button>	
+	    		</div>
+	    	</div>
 	    <div class="modal-footer">
 	    	<button class="btn btn-success btn-sm"  ng-click="salvar()">
 	    		Salvar

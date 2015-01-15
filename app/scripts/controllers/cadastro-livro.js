@@ -10,6 +10,9 @@
 angular.module('bibliotecasSystemApp')
   .controller('CadastroLivroCtrl', function ($scope,modal) {
     
+    $scope.livro = {
+        tipo : true
+    };
 
     $scope.autores = [{
     	id:1,nome:'bruno'
