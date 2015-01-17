@@ -1,11 +1,11 @@
 <div class="row">
 	<fs-form-for model="obra">
-		<fs-input as="text" name="nome" required="" label="Descrição: " placeholder="Digite o nome da descrição"></fs-input>
-		<fs-input as="text" name="titulo" required="" label="Título: " placeholder="Digite o nome da título"></fs-input>
-		<fs-input as="text" name="subTitulo" required="" label="Sub-Titulo: " placeholder="Digite o sub-titulo"></fs-input><fs-input as="text" name="isbn" required="" label="ISBN: " placeholder="Digite o nome do ISBN"></fs-input>
+		<fs-input as="text" name="nome" required="" label="Descrição: " placeholder="Digite a descrição"></fs-input>
+		<fs-input as="text" name="titulo" required="" label="Título: " placeholder="Digite o título"></fs-input>
+		<fs-input as="text" name="subTitulo" required="" label="Sub-Título: " placeholder="Digite o sub-título"></fs-input><fs-input as="text" name="isbn" required="" label="ISBN: " placeholder="Digite o nome do ISBN"></fs-input>
 		<fs-input as="text" name="cdd" required="" label="CDD: " placeholder="Digite o nome do CDD"></fs-input>
-		<fs-input as="text" name="edicao" required="" label="Edição: " placeholder="Digite o numero Edição"></fs-input>
-		<fs-input as="number" name="numerodetombo" required="" label="Numero de tombo: " placeholder="Digite o numero de tombo">
+		<fs-input as="text" name="edicao" required="" label="Edição: " placeholder="Digite o número Edição"></fs-input>
+		<fs-input as="number" name="numerodetombo" required="" label="Número de tombo: " placeholder="Digite o numero de tombo">
 		</fs-input>
 		<div class="form-group">
 			<fs-row label="Autor: ">
@@ -20,8 +20,8 @@
 	        </fs-row>
 	    </div>
 		<div class="form-group">
-			<fs-row class="col-sm-2 control-label" label="Género: ">
-		      <div class="btn-group col-xs-4">
+			<fs-row class="col-sm-2 control-label" label="Gênero: ">
+		      <div class="col-xs-4">
 		        <div fs-select="" ng-class="form-control" freetext="true" items="generos" ng-disabled="disabled" ng-model="obra.genero">
 		          {{item.nome}}
 		        </div>
@@ -37,16 +37,15 @@
 					Livro
 				</label>
 				<label  required="" class="btn btn-danger" ng-model="livro.tipo" btn-radio="false">
-					Revista
+					Periódico
 				</label>
 			</div>
-
 		</div>
 	    <div  collapse="livro.tipo" class="panel panel-default" >
 	    	<div class="panel-body" >
 	    		<fs-input as="number" name="ano" required="" label="Ano de publicação: " placeholder="Digite o ano de publicação"></fs-input>
 	    		<fs-input as="number" name="issn" required="" label="ISSN: " placeholder="Digite o ISSN"></fs-input>
-	    		<fs-input as="number" name="numeroRevista" required="" label="Numero daa revista: " placeholder="Digite o ano de publicação"></fs-input>
+	    		<fs-input as="number" name="numeroPeriodico" required="" label="Numero do periódico: " placeholder="Digite do periódico"></fs-input>
 	    	</div>
 	    		<div class="modal-footer">
 	    			<button type="button" class="btn btn-success" ng-click="">
