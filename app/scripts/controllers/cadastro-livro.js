@@ -32,5 +32,8 @@ angular.module('bibliotecasSystemApp')
     $scope.close = function(){
         modal.close();
     }
+    $scope.openDialogArtigo = function(){
+        modal.dialogArtigo();
+    }
 
   });

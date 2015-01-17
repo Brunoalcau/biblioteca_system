@@ -24,6 +24,13 @@ angular.module('bibliotecasSystemApp')
   				backdrop : 'static'
   			});
   		},
+      dialogArtigo : function(){
+        $modal.open({
+          templateUrl : 'views/cadastro-artigo.html',
+          controller : 'CadastroArtigoCtrl',
+          backdrop : 'static'
+        });
+      },
   		close : function(){
 			$modal.close();
   		}
