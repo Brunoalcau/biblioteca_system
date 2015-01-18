@@ -11,5 +11,5 @@ angular.module('bibliotecasSystemApp')
   .controller('CadastroAutorCtrl', function ($scope,$modalInstance) {
 	    $scope.close = function(){
 	    	$modalInstance.close();
-	    }
-  });
+	    };
+  	});

@@ -33,7 +33,7 @@ angular.module('bibliotecasSystemApp')
 
     $scope.openDialogEditora = function(){
         modal.dialogEditora();
-    }
+    };
 
     $scope.openDialogAutor = function(){
     	modal.dialogAutor();
@@ -44,9 +44,10 @@ angular.module('bibliotecasSystemApp')
     };
     $scope.close = function(){
         modal.close();
-    }
+    };
+
     $scope.openDialogArtigo = function(){
         modal.dialogArtigo();
-    }
+    };
 
   });
