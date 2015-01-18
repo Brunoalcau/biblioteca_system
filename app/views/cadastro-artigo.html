@@ -1,0 +1,21 @@
+<div class="modal-header">
+    <h3 class="modal-title">Cadastro de Artigo</h3>
+</div>	
+<div class="modal-body">
+	<fs-form-for model="artigo">
+		<fs-input as="text" ng-app="string"me="descricao" required="" label="Descrição: " placeholder="Digite a descrição do artigo"></fs-input>
+		<div class="form-group">
+			<fs-row class="col-sm-2 control-label" label="Gênero do artigo: ">
+		      <div class="col-xs-4">
+		        <div fs-select="" ng-class="form-control" freetext="true" items="generosArtigo" ng-disabled="disabled" ng-model="obra.genero">
+		          {{item.nome}}
+		        </div>
+		      </div>
+	        </fs-row>
+	    </div>
+		<div class="modal-footer">
+			<button type="button" class="btn btn-default" ng-click="close()">Fechar</button>
+			<button class="btn btn-success btn-sm"  ng-click="salvar()">Salvar</button>
+		</div>
+	</fs-form-for>
+</div>

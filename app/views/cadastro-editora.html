@@ -1,0 +1,13 @@
+<div class="modal-header">
+    <h3 class="modal-title">Cadastro de Editora</h3>
+</div>	
+<div class="modal-body">
+	<fs-form-for model="editora">
+		<fs-input as="text" name="nome" required="" label="Nome: " placeholder="Digite o nome"></fs-input>
+		<div class="modal-footer">
+			<button type="button" class="btn btn-default" ng-click="close()">Fechar</button>
+			<button class="btn btn-success btn-sm"  ng-click="salvar()">Salvar</button>
+		</div>
+
+	</fs-form-for>
+</div>
