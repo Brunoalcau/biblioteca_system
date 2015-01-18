@@ -10,6 +10,12 @@
 angular.module('bibliotecasSystemApp')
   .controller('CadastroLivroCtrl', function ($scope,modal) {
     
+    $scope.countryNames =[
+        {id:1,nome:'Bruno'},
+        {id:2,nome:''}
+
+    ];
+
     $scope.obra = {
         tipo : true
     };
@@ -18,9 +24,13 @@ angular.module('bibliotecasSystemApp')
     	id:1,nome:'bruno'
     }];
 
-    $scope.generos = [{
-    	id:1,nome:' Romance'
-    }];
+    $scope.generos = [
+    {
+        id:1,nome:'Romance'
+    },{
+    	id:2,nome:'Aventura'
+    }
+    ];
 
     $scope.openDialogAutor = function(){
     	modal.dialogAutor();

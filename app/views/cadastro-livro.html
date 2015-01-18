@@ -19,20 +19,19 @@
 		      </button>
 	        </fs-row>
 	    </div>
-
-	    <!-- Multipla escolha -->
-		<div class="form-group">
-			<fs-row class="col-sm-2 control-label" label="Gênero: ">
-		      <div class="col-xs-4">
-		        <div fs-select="" ng-class="form-control" freetext="true" items="generos" ng-disabled="disabled" ng-model="obra.genero">
-		          {{item.nome}}
-		        </div>
-		      </div>
-		      <button type="button" class="btn btn-success" ng-click="openDialogGenero()">
-		      	<i class="glyphicon glyphicon-plus"></i>
-		      </button>
-	        </fs-row>
-	    </div>
+	    <div class="form-group row">
+  			<label class="col-xs-2 control-label">
+    			Gênero
+  			</label>
+	  		<div fs-multiselect="" items="generos" freetext="" class="col-xs-8" ng-disabled="disabled" ng-model="countryName">
+	  			{{item.nome}}
+	  		</div>
+	  		 <div class="col-xs-2">
+			    <button type="button" class="btn btn-success" ng-click="openDialogGenero()">
+		      		<i class="glyphicon glyphicon-plus"></i>
+		      	</button>
+  			</div>
+	   </div>
 	    <div class="form-group">
 			<div class="btn-group col-xs-4">
 				<label required="" class="btn btn-success" ng-model="obra.tipo" btn-radio="true">
