@@ -31,6 +31,13 @@ angular.module('bibliotecasSystemApp')
           backdrop : 'static'
         });
       },
+      dialogEditora : function(){
+        $modal.open({
+          templateUrl : 'views/cadastro-editora.html',
+          controller : 'CadastroEditoraCtrl',
+          backdrop : 'static'
+        });
+      },
   		close : function(){
 			$modal.close();
   		}

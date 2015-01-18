@@ -46,6 +46,10 @@ angular
         templateUrl: 'views/cadastro-artigo.html',
         controller: 'CadastroArtigoCtrl'
       })
+      .when('/cadastro-editora', {
+        templateUrl: 'views/cadastro-editora.html',
+        controller: 'CadastroEditoraCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });

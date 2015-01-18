@@ -19,6 +19,18 @@
 		      </button>
 	        </fs-row>
 	    </div>
+	    <div class="form-group">
+			<fs-row label="Editora: ">
+		      <div class="col-xs-4">
+		        <div ng-class="form-control" fs-select="" freetext="true" items="editoras" ng-disabled="disabled" ng-model="obra.editora">
+		          {{item.nome}}
+		        </div>
+		      </div>
+		      <button type="button" class="btn btn-success"  ng-click="openDialogEditora()">
+		      	<i class="glyphicon glyphicon-plus"></i>
+		      </button>
+	        </fs-row>
+	    </div>
 
 	    <div class="form-group row">
   			<label class="col-xs-2 control-label">
@@ -38,7 +50,7 @@
     			Cativo:
   			</label>
 	      <div class="col-xs-6">
-	      	<input type="checkbox" ng-model="cativo" class="form-control col-xs-6">
+	      	<input type="checkbox" ng-model="obra.cativo" class="form-control col-xs-6">
 	        <!-- <div fs-checkbox="" items="checks"  ng-model="">
 	            <b>{{item.id}}</b> {{item.label}}
 	        </div> -->

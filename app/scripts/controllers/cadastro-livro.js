@@ -27,6 +27,14 @@ angular.module('bibliotecasSystemApp')
         }
     ];
 
+    $scope.salvar = function(){
+        console.log($scope.obra);
+    };
+
+    $scope.openDialogEditora = function(){
+        modal.dialogEditora();
+    }
+
     $scope.openDialogAutor = function(){
     	modal.dialogAutor();
     };
