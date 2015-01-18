@@ -10,7 +10,7 @@
 angular.module('bibliotecasSystemApp')
   .controller('CadastroLivroCtrl', function ($scope,modal) {
     
-    $scope.livro = {
+    $scope.obra = {
         tipo : true
     };
 

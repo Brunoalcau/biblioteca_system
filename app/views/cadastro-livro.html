@@ -5,7 +5,7 @@
 		<fs-input as="text" name="subTitulo" required="" label="Sub-Título: " placeholder="Digite o sub-título"></fs-input><fs-input as="text" name="isbn" required="" label="ISBN: " placeholder="Digite o nome do ISBN"></fs-input>
 		<fs-input as="text" name="cdd" required="" label="CDD: " placeholder="Digite o nome do CDD"></fs-input>
 		<fs-input as="text" name="edicao" required="" label="Edição: " placeholder="Digite o número Edição"></fs-input>
-		<fs-input as="number" name="numerodetombo" required="" label="Número de tombo: " placeholder="Digite o numero de tombo">
+		<fs-input as="number" name="numerodetombo" required="" label="Número de tombo: " placeholder="Digite o número de tombo">
 		</fs-input>
 		<div class="form-group">
 			<fs-row label="Autor: ">
@@ -19,6 +19,8 @@
 		      </button>
 	        </fs-row>
 	    </div>
+
+	    <!-- Multipla escolha -->
 		<div class="form-group">
 			<fs-row class="col-sm-2 control-label" label="Gênero: ">
 		      <div class="col-xs-4">
@@ -33,19 +35,19 @@
 	    </div>
 	    <div class="form-group">
 			<div class="btn-group col-xs-4">
-				<label required="" class="btn btn-success" ng-model="livro.tipo" btn-radio="true">
+				<label required="" class="btn btn-success" ng-model="obra.tipo" btn-radio="true">
 					Livro
 				</label>
-				<label  required="" class="btn btn-danger" ng-model="livro.tipo" btn-radio="false">
+				<label  required="" class="btn btn-danger" ng-model="obra.tipo" btn-radio="false">
 					Periódico
 				</label>
 			</div>
 		</div>
-	    <div  collapse="livro.tipo" class="panel panel-default" >
+	    <div  collapse="obra.tipo" class="panel panel-default" >
 	    	<div class="panel-body" >
 	    		<fs-input as="number" name="ano" required="" label="Ano de publicação: " placeholder="Digite o ano de publicação"></fs-input>
 	    		<fs-input as="number" name="issn" required="" label="ISSN: " placeholder="Digite o ISSN"></fs-input>
-	    		<fs-input as="number" name="numeroPeriodico" required="" label="Numero do periódico: " placeholder="Digite do periódico"></fs-input>
+	    		<fs-input as="number" name="numeroPeriodico" required="" label="Número do periódico: " placeholder="Digite do periódico"></fs-input>
 	    	</div>
 	    		<div class="modal-footer">
 	    			<button type="button" class="btn btn-success" ng-click="openDialogArtigo()">
