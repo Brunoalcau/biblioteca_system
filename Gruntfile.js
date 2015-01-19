@@ -354,7 +354,7 @@ module.exports = function (grunt) {
     },
     deploy:{
       dev : {
-        db:'http://localhost:5984/biblioteca_system'
+        db:'http://localhost:5984/biblioteca'
       },
       prod:{
         db:'https://brunoalcau:503810kaju@brunoalcau.cloudant.com/biblioteca'

@@ -8,7 +8,7 @@
  * Controller of the bibliotecasSystemApp
  */
 angular.module('bibliotecasSystemApp')
-  .controller('CadastroLivroCtrl', function ($scope,modal) {
+  .controller('CadastroLivroCtrl', function ($scope,modal,doc) {
 
     $scope.obra = {
         tipo : true
@@ -28,7 +28,7 @@ angular.module('bibliotecasSystemApp')
     ];
 
     $scope.salvar = function(){
-        console.log($scope.obra);
+        doc.salvar($scope.obra);
     };
 
     $scope.openDialogEditora = function(){
@@ -48,6 +48,6 @@ angular.module('bibliotecasSystemApp')
 
     $scope.openDialogArtigo = function(){
         modal.dialogArtigo();
-    };
+    };  
 
   });

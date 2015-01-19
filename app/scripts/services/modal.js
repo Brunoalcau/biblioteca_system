@@ -37,7 +37,7 @@ angular.module('bibliotecasSystemApp')
           controller : 'CadastroEditoraCtrl',
           backdrop : 'static'
         });
-      },
+        },
   		close : function(){
 			$modal.close();
   		}

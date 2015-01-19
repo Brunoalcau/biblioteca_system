@@ -2,7 +2,7 @@
 	<fs-form-for model="obra">
 		<fs-input as="text" name="nome" required="" label="Descrição: " placeholder="Digite a descrição"></fs-input>
 		<fs-input as="text" name="titulo" required="" label="Título: " placeholder="Digite o título"></fs-input>
-		<fs-input as="text" name="subTitulo" required="" label="SubTítulo: " placeholder="Digite o subtítulo"></fs-input><fs-input as="text" name="isbn" required="" label="ISBN: " placeholder="Digite do ISBN"></fs-input>
+		<fs-input as="text" name="subTitulo" required="" label="SubTítulo: " placeholder="Digite o subtítulo"></fs-input><fs-input as="text" name="isbn" required="" label="ISBN: " placeholder="Digite o ISBN"></fs-input>
 		<fs-input as="text" name="cdd" required="" label="CDD: " placeholder="Digite o CDD"></fs-input>
 		<fs-input as="text" name="edicao" required="" label="Edição: " placeholder="Digite o número Edição"></fs-input>
 		<fs-input as="number" name="numerodetombo" required="" label="Número de tombo: " placeholder="Digite o número de tombo">
@@ -31,8 +31,7 @@
 		      </button>
 	        </fs-row>
 	    </div>
-
-	    <div class="form-group row">
+	    <div class="form-group">
   			<label class="col-xs-2 control-label">
     			Gênero
   			</label>
@@ -50,10 +49,7 @@
     			Cativo:
   			</label>
 	      <div class="col-xs-6">
-	      	<input type="checkbox" ng-model="obra.cativo" class="form-control col-xs-6">
-	        <!-- <div fs-checkbox="" items="checks"  ng-model="">
-	            <b>{{item.id}}</b> {{item.label}}
-	        </div> -->
+	      	<input type="checkbox" ng-model="obra.cativo" class="form-control">
 	      </div>
 	    </div>
 	    <div class="form-group">
