@@ -6,10 +6,7 @@ describe('Controller: CadastroLivroCtrl', function () {
   beforeEach(module('bibliotecasSystemApp'));
 
   var CadastroLivroCtrl,
-    scope,
-    doc,
-    genero,
-    modal;
+    scope;
 
   // Initialize the controller and a mock scope
   beforeEach(inject(function ($controller, $rootScope,doc,genero,modal) {
@@ -17,7 +14,8 @@ describe('Controller: CadastroLivroCtrl', function () {
     CadastroLivroCtrl = $controller('CadastroLivroCtrl', {
       $scope: scope,
       doc : doc,
-      genero:genero
+      genero:genero,
+      modal:modal
     });
   }));
 
