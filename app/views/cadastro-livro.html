@@ -1,7 +1,10 @@
-<div class="row">
+<div class="modal-header">
+    <h3 class="modal-title">Cadastro de Livro/Periódico</h3>
+</div>
+<div class="modal-body">
 	<fs-form-for model="obra">
 		<fs-input as="text" name="nome" required="" label="Descrição: " placeholder="Digite a descrição"></fs-input>
-		<fs-input as="text" name="titulo" required="" label="Título: " placeholder="Digite o título"></fs-input>
+		<fs-input as="text" name="titulo" errors="{key : 'Teste'}" label="Título: " placeholder="Digite o título"></fs-input>
 		<fs-input as="text" name="subTitulo" required="" label="Subtítulo: " placeholder="Digite o subtítulo"></fs-input><fs-input as="text" name="isbn" required="" label="ISBN: " placeholder="Digite o ISBN"></fs-input>
 		<fs-input as="text" name="cdd" required="" label="CDD: " placeholder="Digite o CDD"></fs-input>
 		<fs-input as="text" name="edicao" required="" label="Edição: " placeholder="Digite o número da Edição"></fs-input>
@@ -10,7 +13,7 @@
 		<div class="form-group">
 			<fs-row label="Autor: ">
 		      <div class="col-xs-4">
-		        <div ng-class="form-control" fs-select="" freetext="true" items="autores" ng-disabled="disabled" ng-model="obra.autor">
+		        <div ng-class="form-control" fs-select="" freetext="true" items="autores"  ng-model="obra.autor">
 		          {{item.nome}}
 		        </div>
 		      </div>
@@ -22,7 +25,7 @@
 	    <div class="form-group">
 			<fs-row label="Editora: ">
 		      <div class="col-xs-4">
-		        <div ng-class="form-control" fs-select="" freetext="true" items="editoras" ng-disabled="disabled" ng-model="obra.editora">
+		        <div ng-class="form-control" fs-select="" freetext="true" items="editoras"  ng-model="obra.editora">
 		          {{item.nome}}
 		        </div>
 		      </div>
@@ -35,8 +38,8 @@
   			<label class="col-xs-2 control-label">
     			Gênero
   			</label>
-	  		<div fs-multiselect="" items="generos" freetext="" class="col-xs-8" ng-model="countryName">
-	  			{{item.nome}}
+	  		<div fs-multiselect="" items="generos" freetext="" class="col-xs-8" ng-model="obrar.genero._id">
+	  			{{item.descricao}}
 	  		</div>
 	  		 <div class="col-xs-2">
 			    <button type="button" class="btn btn-success" ng-click="openDialogGenero()">
@@ -62,23 +65,23 @@
 				</label>
 			</div>
 		</div>
-	    <div  collapse="obra.tipo" class="panel panel-default" >
+	    <div  collapse="obra.tipo"  class="panel panel-default" >
 	    	<div class="panel-body" >
-	    		<fs-input as="number" name="ano" required="" label="Ano de publicação: " placeholder="Digite o ano de publicação"></fs-input>
-	    		<fs-input as="number" name="issn" required="" label="ISSN: " placeholder="Digite o ISSN"></fs-input>
-	    		<fs-input as="number" name="numeroPeriodico" required="" label="Número do periódico: " placeholder="Digite do periódico"></fs-input>
+	    		<fs-input as="number" ng-disabled="!obra.tipo" name="ano" required="" label="Ano de publicação: " placeholder="Digite o ano de publicação"></fs-input>
+	    		<fs-input as="number" ng-disabled="!obra.tipo" name="issn" required="" label="ISSN: " placeholder="Digite o ISSN"></fs-input>
+	    		<fs-input as="number" ng-disabled="!obra.tipo" name="numeroPeriodico" required="" label="Número do periódico: " placeholder="Digite do periódico"></fs-input>
 	    	</div>
 	    		<div class="modal-footer">
 	    			<button type="button" class="btn btn-success" ng-click="openDialogArtigo()">
 		      			Adicionar Artigos
 		      			<i class="glyphicon glyphicon-plus"></i>
-		      		</button>	
+		      		</button>
 	    		</div>
 	    	</div>
 	    <div class="modal-footer">
-	    	<button class="btn btn-success btn-sm"  ng-click="salvar()">
+	    	<button class="btn btn-success btn-sm" ng-disabled="form.$invalid" ng-click="salvar()">
 	    		Salvar
-	    	</button>
-	    </div>	
-	</fs-form-for>
-</div>
+		    	</button>
+		    </div>
+		</fs-form-for>
+	</div>

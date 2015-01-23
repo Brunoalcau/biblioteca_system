@@ -1,18 +1,21 @@
 'use strict';
 
-describe('Service: doc', function () {
+describe('Service: genero', function () {
 
   // load the service's module
   beforeEach(module('bibliotecasSystemApp'));
 
   // instantiate service
-  var doc;
-  beforeEach(inject(function (_doc_) {
-    doc = _doc_;
+  var genero,
+    q
+  ;
+  beforeEach(inject(function (_genero_,$q) {
+    genero = _genero_;
+    q = $q;
   }));
 
   it('should do something', function () {
-    //expect(!!doc).toBe(true);
+    expect(!!genero).toBe(true);
   });
 
 });

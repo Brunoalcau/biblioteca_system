@@ -1,6 +1,6 @@
 'use strict';
 
-var 
+var
   couchapp = require('couchapp'),
   path = require('path'),
   ddoc = {
@@ -10,6 +10,19 @@ var
     shows: {}
   };
 
+
+ddoc.views.documentoPorTipo = {
+  map:function(doc) {
+    if(doc.tipoDocumento){
+      emit(doc.tipoDocumento, doc);
+    }
+  },
+  reduce : '_count'
+}
+
+
 module.exports = ddoc;
 
-couchapp.loadAttachments(ddoc, path.join(__dirname, 'dist'));
+
+couchapp.loadAttachments(ddoc, path.join(__dirname, 'app'));
+// couchapp.loadAttachments(ddoc, path.join(__dirname, 'bower_components'));
