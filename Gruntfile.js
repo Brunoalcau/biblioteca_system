@@ -317,7 +317,7 @@ module.exports = function (grunt) {
           src: ['generated/*']
         }, {
           expand: true,
-          cwd: 'app/bower_components/bootstrap/dist',
+          cwd: 'bower_components/bootstrap/dist',
           src: 'fonts/*',
           dest: '<%= yeoman.dist %>'
         }]
@@ -368,7 +368,8 @@ module.exports = function (grunt) {
       processo = require('child_process'),
       config = grunt.config('deploy')[this.target],
       nomeArquivo = 'couchapp.'+this.target+'.conf.js',
-      comando = 'node_modules/couchapp/bin.js push  ' + nomeArquivo + ' ' + config.db;
+      comando = 'node_modules/couchapp/bin.js push couchapp.dev.conf.js ' + config.db
+    ;
     // ;
     // console.log(config.db);
     console.log(comando);
