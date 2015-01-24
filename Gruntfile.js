@@ -367,7 +367,7 @@ module.exports = function (grunt) {
       done = this.async(),
       processo = require('child_process'),
       config = grunt.config('deploy')[this.target],
-      nomeArquivo = 'couchapp.'+this.target+'.conf.js',
+      //nomeArquivo = 'couchapp.'+this.target+'.conf.js',
       comando = 'node_modules/couchapp/bin.js push couchapp.dev.conf.js ' + config.db
     ;
     // ;
