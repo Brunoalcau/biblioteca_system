@@ -317,7 +317,7 @@ module.exports = function (grunt) {
           src: ['generated/*']
         }, {
           expand: true,
-          cwd: 'bower_components/bootstrap/dist',
+          cwd: 'app/bower_components/bootstrap/dist',
           src: 'fonts/*',
           dest: '<%= yeoman.dist %>'
         }]
@@ -363,12 +363,12 @@ module.exports = function (grunt) {
   });
 
   grunt.registerMultiTask('deploy','deploy da aplicacao via push couchapp',function(){
-    var 
+    var
       done = this.async(),
       processo = require('child_process'),
       config = grunt.config('deploy')[this.target],
       nomeArquivo = 'couchapp.'+this.target+'.conf.js',
-      comando = 'node_modules/couchapp/bin.js push ' + nomeArquivo + ' ' + config.db;
+      comando = 'node_modules/couchapp/bin.js push  ' + nomeArquivo + ' ' + config.db;
     // ;
     // console.log(config.db);
     console.log(comando);
