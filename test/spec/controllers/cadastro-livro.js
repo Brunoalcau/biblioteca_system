@@ -9,12 +9,12 @@ describe('Controller: CadastroLivroCtrl', function () {
     scope;
 
   // Initialize the controller and a mock scope
-  beforeEach(inject(function ($controller, $rootScope,doc,genero,modal) {
+  beforeEach(inject(function ($controller, $rootScope,doc,obterDocumentosPorTipo,modal) {
     scope = $rootScope.$new();
     CadastroLivroCtrl = $controller('CadastroLivroCtrl', {
       $scope: scope,
       doc : doc,
-      genero:genero,
+      obterDocumentosPorTipo:obterDocumentosPorTipo,
       modal:modal
     });
   }));

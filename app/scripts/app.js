@@ -52,6 +52,14 @@ angular
         templateUrl: 'views/cadastro-editora.html',
         controller: 'CadastroEditoraCtrl'
       })
+      .when('/cadastro-periodico', {
+        templateUrl: 'views/cadastro-periodico.html',
+        controller: 'CadastroPeriodicoCtrl'
+      })
+      .when('/cadastro-colecao', {
+        templateUrl: 'views/cadastro-colecao.html',
+        controller: 'CadastroColecaoCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });

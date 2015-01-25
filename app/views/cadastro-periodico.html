@@ -1,0 +1,89 @@
+<alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</alert>
+
+<div class="modal-header">
+  <h3 class="modal-title">Cadastro de Periódico</h3>
+</div>
+<div class="modal-body">
+  <fs-form-for model="obra">
+    <fs-input as="text" name="nome" required="" label="Descrição: " placeholder="Digite a descrição"></fs-input>
+    <fs-input as="text" name="titulo" errors="{key : 'Teste'}" label="Título: " placeholder="Digite o título"></fs-input>
+    <fs-input as="text" name="subTitulo" required="" label="Subtítulo: " placeholder="Digite o subtítulo"></fs-input><fs-input as="text" name="isbn" required="" label="ISBN: " placeholder="Digite o ISBN"></fs-input>
+    <fs-input as="text" name="cdd" required="" label="CDD: " placeholder="Digite o CDD"></fs-input>
+    <fs-input as="number" name="edicao" required="" label="Edição: " placeholder="Digite o número da Edição"></fs-input>
+    <fs-input as="number" name="numerodetombo" required="" label="Número de tombo: " placeholder="Digite o número de tombo">
+    </fs-input>
+    <div class="form-group">
+      <fs-row label="Autor: ">
+        <div class="col-xs-4">
+          <div ng-class="form-control" fs-select="" freetext="true" items="autores"  ng-model="obra.autor">
+            {{item.nome}}
+          </div>
+        </div>
+        <button type="button" class="btn btn-success"  ng-click="openDialogAutor()">
+          <i class="glyphicon glyphicon-plus"></i>
+        </button>
+      </fs-row>
+    </div>
+    <div class="form-group">
+      <fs-row label="Editora: ">
+        <div class="col-xs-4">
+          <div ng-class="form-control" fs-select="" freetext="true" items="editoras"  ng-model="obra.editorac">
+            {{item.nome}}
+          </div>
+        </div>
+        <button type="button" class="btn btn-success"  ng-click="openDialogEditora()">
+          <i class="glyphicon glyphicon-plus"></i>
+        </button>
+      </fs-row>
+    </div>
+    <div class="form-group">
+      <label class="col-xs-2 control-label">
+        Gênero
+      </label>
+      <div fs-multiselect="" items="generos" freetext="" class="col-xs-8" ng-model="obrar.genero._id">
+        {{item.descricao}}
+      </div>
+      <div class="col-xs-2">
+        <button type="button" class="btn btn-success" ng-click="openDialogGenero()">
+          <i class="glyphicon glyphicon-plus"></i>
+        </button>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-xs-2 control-label">
+        Cativo:
+      </label>
+      <div class="col-xs-6">
+        <input type="checkbox" ng-model="obra.cativo" class="form-control">
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="btn-group col-xs-4">
+        <label required="" class="btn btn-success" ng-model="obra.tipo" btn-radio="true">
+          Livro
+        </label>
+        <label  required="" class="btn btn-danger" ng-model="obra.tipo" btn-radio="false">
+          Periódico
+        </label>
+      </div>
+    </div>
+    <div  collapse="obra.tipo"  class="panel panel-default" >
+      <div class="panel-body" >
+        <fs-input as="number" ng-disabled="!obra.tipo" name="ano" required="" label="Ano de publicação: " placeholder="Digite o ano de publicação"></fs-input>
+        <fs-input as="number" ng-disabled="!obra.tipo" name="issn" required="" label="ISSN: " placeholder="Digite o ISSN"></fs-input>
+        <fs-input as="number" ng-disabled="!obra.tipo" name="numeroPeriodico" required="" label="Número do periódico: " placeholder="Digite do periódico"></fs-input>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success" ng-click="openDialogArtigo()">
+          Adicionar Artigos
+          <i class="glyphicon glyphicon-plus"></i>
+        </button>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-success btn-sm" ng-disabled="form.$invalid" ng-click="salvar()">
+        Salvar
+      </button>
+    </div>
+  </fs-form-for>
+</div>

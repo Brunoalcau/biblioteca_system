@@ -14,13 +14,13 @@ angular.module('bibliotecasSystemApp')
     var config = {
       dev :'http://localhost:5984/biblioteca',
       prod : 'https://brunoalcau.cloudant.com/biblioteca'
-    },db = new pouchDB(config.prod);
+    },db = new pouchDB(config.dev);
 
 	var salvar = function(doc){
     return db.post(doc);
 	};
 
-  var obterDocumentosPorTipo= function(options){
+  var obterDoc= function(options){
     var deferred = $q.defer();
     db.query(options.view,options.option,function(erro, resposta){
           if(erro){
@@ -34,6 +34,6 @@ angular.module('bibliotecasSystemApp')
 
   	return {
   		salvar : salvar,
-      obterDocumentosPorTipo: obterDocumentosPorTipo
+      obterDoc: obterDoc
   	};
   });

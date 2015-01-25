@@ -1,15 +1,14 @@
 <div class="modal-header">
     <h3 class="modal-title">Cadastro de autor</h3>
-</div>	
+</div>
 <div class="modal-body">
 	<fs-form-for model="autor">
 		<fs-input as="text" name="sobrenome" required="" label="Sobrenome: " placeholder="Digite o  Sobrenome"></fs-input>
 		<fs-input as="text" name="nome" required="" label="Nome: " placeholder="Digite o nome"></fs-input>
-		<fs-input as="number" name="cutter" required="" label="Cutter: " placeholder="Digite o  cutter"></fs-input>
+		<fs-input as="text" name="cutter" required="" label="Cutter: " placeholder="Digite o  cutter"></fs-input>
 		<div class="modal-footer">
 			<button type="button" class="btn btn-default" ng-click="close()">Fechar</button>
-			<button class="btn btn-success btn-sm"  ng-click="salvar()">Salvar</button>
+			<button class="btn btn-success btn-sm" ng-disabled="form.$invalid"   ng-click="salvarAutor()">Salvar</button>
 		</div>
-
 	</fs-form-for>
 </div>

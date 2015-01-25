@@ -20,14 +20,16 @@ angular.module('bibliotecasSystemApp')
     var atualizarListaGeneroNoCadastroLivro = function(){
       $rootScope.$broadcast('atualizarListaGeneroNoCadastroLivro');
     };
+
     $scope.salvarGenero = function(){
 
       var success = function(){
         atualizarListaGeneroNoCadastroLivro();
-        $scope.genero = null;
         $scope.close();
+
       };
       var error = function (erro){
+
         console.log(erro);
       };
 
