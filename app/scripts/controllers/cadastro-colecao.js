@@ -8,10 +8,15 @@
  * Controller of the bibliotecasSystemApp
  */
 angular.module('bibliotecasSystemApp')
-  .controller('CadastroColecaoCtrl', function ($scope,$modalInstance,doc) {
+  .controller('CadastroColecaoCtrl', function ($scope,$modalInstance,doc,$rootScope) {
+
+    $scope.colecao = {
+      tipoDocumento : 'COLECAO'
+    };
 
     $scope.salvarColecao = function(){
       var sucess  = function(){
+        atualizarListaColecao();
         $scope.close();
       }, error = function(){
 
@@ -21,5 +26,9 @@ angular.module('bibliotecasSystemApp')
 
     $scope.close = function(){
       $modalInstance.close();
+    };
+
+    var atualizarListaColecao = function(){
+      $rootScope.$broadcast('atualizarListaColecao');
     };
   });

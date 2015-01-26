@@ -46,6 +46,19 @@ angular.module('bibliotecasSystemApp')
      return obterDocumentos(config,options);
     };
 
+
+    var colecoes = function(config){
+      var options = {
+          view : 'app/documentoPorTipo',
+          attr: 'colecoes',
+          option : {
+            key:'COLECAO',
+            reduce:false
+          }
+      };
+      return obterDocumentos(config,options);
+    };
+
     var obterDocumentos = function(config , options){
       var deffend = $q.defer();
 
@@ -61,9 +74,12 @@ angular.module('bibliotecasSystemApp')
       return deffend.promise;
     };
 
+
     return {
       autores  :autores,
       generos : generos,
-      editoras:editoras
+      editoras:editoras,
+      colecoes : colecoes
+
     };
   });

@@ -29,6 +29,11 @@ angular.module('bibliotecasSystemApp')
     $scope.openDialogGenero = function(){
         modal.dialogGenero();
     };
+
+    $scope.openDialogColecao = function(){
+      modal.dialogColecao();
+    };
+
     $scope.close = function(){
         modal.close();
     };
@@ -38,6 +43,16 @@ angular.module('bibliotecasSystemApp')
     };
 
     $scope.$on('atualizarListaGeneroNoCadastroLivro',function(){
+      var config = null,
+        success = function(config){
+          $scope.colecoes = config.colecoes;
+        },error = function(err){
+          console.log(err);
+        };
+      obterDocumentosPorTipo.colecoes(config).then(success,error);
+    });
+
+    $scope.$on('atualizarListaColecao',function(){
       obterListaParaComboBox();
     });
 
@@ -81,6 +96,7 @@ angular.module('bibliotecasSystemApp')
         $scope.generos = config.generos;
         $scope.autores = config.autores;
         $scope.editoras = config.editoras;
+        $scope.colecoes= config.colecoes;
       };
 
       var erro = function(erro){
@@ -96,6 +112,7 @@ angular.module('bibliotecasSystemApp')
       obterDocumentosPorTipo.generos(config)
         .then(obterDocumentosPorTipo.autores,erro)
         .then(obterDocumentosPorTipo.editoras,erro)
+        .then(obterDocumentosPorTipo.colecoes,erro)
         .then(sucesso,erro);
     };
     obterListaParaComboBox();

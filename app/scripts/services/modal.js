@@ -37,9 +37,14 @@ angular.module('bibliotecasSystemApp')
           controller : 'CadastroEditoraCtrl',
           backdrop : 'static'
         });
-        },
-  		close : function(){
-			$modal.close();
-  		}
+      },
+      dialogColecao : function(){
+        $modal.open({
+          templateUrl : 'views/cadastro-colecao.html',
+          controller : 'CadastroColecaoCtrl',
+          backdrop : 'static'
+
+        });
+      }
   	};
   });
