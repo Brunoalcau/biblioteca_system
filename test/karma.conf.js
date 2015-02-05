@@ -16,6 +16,8 @@ module.exports = function(config) {
     // testing framework to use (jasmine/mocha/qunit/...)
     frameworks: ['jasmine'],
 
+    reporters : ['coverage'],
+
     // list of files / patterns to load in the browser
     files: [
       'test/bind-polyfill.js',
@@ -59,7 +61,8 @@ module.exports = function(config) {
     // Which plugins to enable
     plugins: [
       'karma-phantomjs-launcher',
-      'karma-jasmine'
+      'karma-jasmine',
+      'karma-coverage'
     ],
 
     // Continuous Integration mode

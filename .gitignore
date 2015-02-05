@@ -4,4 +4,4 @@ dist
 .sass-cache
 bower_components
 erl_crash.dump
-.idea
+

@@ -71,6 +71,12 @@ module.exports = function (grunt) {
         hostname: 'localhost',
         livereload: 35729
       },
+      coveralls : {
+        options : {
+          src: 'lcov.info',
+          force: false
+        }
+      },
       livereload: {
         options: {
           open: true,
@@ -410,6 +416,8 @@ module.exports = function (grunt) {
     'connect:test',
     'karma'
   ]);
+
+  grunt.registerTask('coveralls',['coveralls']);
 
   grunt.registerTask('build', [
     'clean:dist',
