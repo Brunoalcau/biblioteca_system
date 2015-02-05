@@ -18,7 +18,16 @@ ddoc.views.documentoPorTipo = {
     }
   },
   reduce : '_count'
-}
+};
+
+ddoc.views.documentoAutenticacao = {
+  map:function(doc){
+     if(doc.tipoDocumento && doc.tipoDocumento === 'user'){
+       emit([doc.usuario,doc.senha],doc);
+     }
+  },
+  reduce : '_count'
+};
 
 
 module.exports = ddoc;

@@ -1,5 +1,4 @@
 'use strict';
-
 /**
  * @ngdoc overview
  * @name bibliotecasSystemApp
@@ -19,11 +18,13 @@ angular
     'formstamp',
     'ui.bootstrap',
     'pouchdb',
-    'underscore'
+    'underscore',
+    'ngCookies'
     // 'mgcrea.ngStrap'
   ])
   .config(function ($routeProvider) {
     $routeProvider
+
       .when('/', {
         templateUrl: 'views/main.html',
         controller: 'MainCtrl'
@@ -42,7 +43,7 @@ angular
       })
       .when('/cadastro-genero', {
         templateUrl: 'views/cadastro-genero.html',
-        controller: 'CadastroGeneroCtrl'
+        controller: 'CadastroGeneroCtrl',
       })
       .when('/cadastro-artigo', {
         templateUrl: 'views/cadastro-artigo.html',
@@ -60,7 +61,22 @@ angular
         templateUrl: 'views/cadastro-colecao.html',
         controller: 'CadastroColecaoCtrl'
       })
+      .when('/login', {
+            templateUrl: 'views/login.html',
+            controller: 'LoginCtrl'
+       })
       .otherwise({
-        redirectTo: '/'
+        redirectTo: '/login'
+      });
+
+  }).run(function($rootScope,autenticacao,$location){
+      $rootScope.$on('$locationChangeStart',function(){
+        if(!autenticacao.estaAutenticado()){
+          $location.path('/login');
+        }
+        if($location.$$path === '/login' && autenticacao.estaAutenticado()){
+           $location.path('/');
+        }
       });
   });
+

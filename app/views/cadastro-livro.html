@@ -4,18 +4,18 @@
     <h3 class="modal-title">Cadastro de Livro</h3>
 </div>
 <div class="modal-body">
-	<fs-form-for model="obra">
+	<fs-form-for model="livro">
 		<fs-input as="text" name="nome" required="" label="Descrição: " placeholder="Digite a descrição"></fs-input>
 		<fs-input as="text" name="titulo" errors="{key : 'Teste'}" label="Título: " placeholder="Digite o título"></fs-input>
 		<fs-input as="text" name="subTitulo" required="" label="Subtítulo: " placeholder="Digite o subtítulo"></fs-input><fs-input as="text" name="isbn" required="" label="ISBN: " placeholder="Digite o ISBN"></fs-input>
 		<fs-input as="text" name="cdd" required="" label="CDD: " placeholder="Digite o CDD"></fs-input>
 		<fs-input as="number" name="edicao" required="" label="Edição: " placeholder="Digite o número da Edição"></fs-input>
-		<fs-input as="number" name="numerodetombo" required="" label="Número de tombo: " placeholder="Digite o número de tombo">
+		<fs-input as="number" name="numerodetombo" ng-disabled="true" label="Número de tombo: ">
 		</fs-input>
 		<div class="form-group">
 			<fs-row label="Autor: ">
 		      <div class="col-xs-4">
-		        <div ng-class="form-control" fs-select="" freetext="true" items="autores"  ng-model="obra.autor">
+		        <div ng-class="form-control" fs-select="" freetext="true" items="autores"  ng-model="livro.autor._id">
 		          {{item.nome}}
 		        </div>
 		      </div>
@@ -27,7 +27,7 @@
 	    <div class="form-group">
 			<fs-row label="Editora: ">
 		      <div class="col-xs-4">
-		        <div ng-class="form-control" fs-select="" freetext="true" items="editoras"  ng-model="obra.editora._id">
+		        <div ng-class="form-control" fs-select="" freetext="true" items="editoras"  ng-model="livro.editora._id._id">
 		          {{item.nome}}
 		        </div>
 		      </div>
@@ -60,7 +60,7 @@
     <div class="form-group">
       <fs-row label="Coleção: ">
         <div class="col-xs-4">
-          <div ng-class="form-control" fs-select="" freetext="true" items="colecoes"  ng-model="obra.colecao._id">
+          <div ng-class="form-control" fs-select="" freetext="true" items="colecoes"  ng-model="livro.colecao._id._id">
             {{item.nome}}
           </div>
         </div>
@@ -72,7 +72,7 @@
 	    <div class="form-group">
 		  </div>
 	    <div class="modal-footer">
-	    	<button class="btn btn-success btn-sm" ng-disabled="form.$invalid" ng-click="salvar()">
+	    	<button class="btn btn-success btn-sm" ng-disabled="form.$invalid" ng-click="salvarLivro()">
 	    		Salvar
 		    	</button>
 		    </div>

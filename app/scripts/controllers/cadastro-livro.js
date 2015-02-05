@@ -10,12 +10,28 @@
 angular.module('bibliotecasSystemApp')
   .controller('CadastroLivroCtrl', function ($scope,modal,doc,obterDocumentosPorTipo) {
 
-    $scope.obra = {
-        tipo : true
+    $scope.livro= {
+        tipoDocumento : 'LIVRO'
     };
 
-    $scope.salvar = function(){
-        doc.salvar($scope.obra);
+    $scope.salvarLivro = function(){
+        var sucess = function(){
+          var alert = {
+            type:'success',
+            msg : 'Cadastro com sucesso'
+          };
+          $scope.addAlert(alert);
+          $scope.livro = null;
+          },error = function(error){
+            var alert = {
+              type:'danger',
+              msg : error
+            };
+            $scope.addAlert(alert);
+        };
+
+        doc.salvar($scope.livro)
+          .then(sucess,error);
     };
 
     $scope.openDialogEditora = function(){
