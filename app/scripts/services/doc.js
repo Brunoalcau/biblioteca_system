@@ -31,28 +31,14 @@ angular.module('bibliotecasSystemApp')
       });
     return deferred.promise;
   };
-  //var getAutenticarUsuario  = function(config){
-  //  var deferred = $q.defer();
-  //  db.querty('',function(erro, resposta){
-  //    if(!erro){
-  //      var usuario = resposta.rows[0];
-  //        if(usuario){
-  //          config.usuario = usuario;
-  //          deferred.resolver(config);
-  //        }else {
-  //          config.msg= 'Usuario ainda não cadastrado'
-  //          deferred.reject(config);
-  //        }
-  //    }
-  //  });
-  //};
-    var getUsuario = function(usuario){
-        return $http.get('/usuarios/'+usuario.nome);
-    };
 
-  	return {
-  		salvar : salvar,
-      obterDoc: obterDoc,
-      getUsuario:getUsuario
-  	};
+  var getUsuario = function(usuario){
+      return $http.get('/usuarios/'+usuario.nome);
+  };
+
+  return {
+    salvar : salvar,
+    obterDoc: obterDoc,
+    getUsuario:getUsuario
+  };
   });
