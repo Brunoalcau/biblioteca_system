@@ -9,7 +9,7 @@
         <form class="form-signin">
           <alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</alert>
           <input type="text" class="form-control" ng-model="usuario.nome" placeholder="Nome do Usuário" required autofocus>
-          <input type="password" class="form-control" ng-model="usuario.senha" placeholder="Password" required>
+          <input type="password" class="form-control" ng-model="usuario.senha" placeholder="Senha" required>
           <button class="btn btn-lg btn-primary btn-block" ng-click="login()" type="submit">
             Fazer login</button>
           </form>
