@@ -14,7 +14,7 @@ angular.module('bibliotecasSystemApp')
     var config = {
       dev :'http://localhost:5984/biblioteca',
       prod : 'https://brunoalcau.cloudant.com/biblioteca'
-    },db = new pouchDB(config.dev);
+    },db = new pouchDB(config.prod);
 
 	var salvar = function(doc){
     return db.post(doc);
