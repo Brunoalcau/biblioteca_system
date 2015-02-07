@@ -31,8 +31,8 @@ angular.module('bibliotecasSystemApp')
         };
         trocarObjectPorId();
         console.log($scope.livro);
-//        doc.salvar($scope.livro)
-//          .then(sucess,error);
+        doc.salvar($scope.livro)
+          .then(sucess,error);
     };
 
     $scope.openDialogEditora = function(){
@@ -93,11 +93,11 @@ angular.module('bibliotecasSystemApp')
     });
 
     var trocarObjectPorId = function(){
-      $scope.editora = $scope.livro.editora._id;
-      $scope.autor = $scope.livro.autor.id;
-      $scope.colecao = $scope.livro.colecao.id;
-
+      $scope.livro.idEditora = $scope.editora._id;
+      $scope.livro.idAutor = $scope.autor._id;
+      $scope.livro.idColecao = $scope.colecao._id;
     };
+
     $scope.$on('atualizarListaAutor',function(){
 
       var config = {
