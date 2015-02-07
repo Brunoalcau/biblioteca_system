@@ -29,9 +29,10 @@ angular.module('bibliotecasSystemApp')
             };
             $scope.addAlert(alert);
         };
-
-        doc.salvar($scope.livro)
-          .then(sucess,error);
+        trocarObjectPorId();
+        console.log($scope.livro);
+//        doc.salvar($scope.livro)
+//          .then(sucess,error);
     };
 
     $scope.openDialogEditora = function(){
@@ -91,7 +92,12 @@ angular.module('bibliotecasSystemApp')
 
     });
 
+    var trocarObjectPorId = function(){
+      $scope.editora = $scope.livro.editora._id;
+      $scope.autor = $scope.livro.autor.id;
+      $scope.colecao = $scope.livro.colecao.id;
 
+    };
     $scope.$on('atualizarListaAutor',function(){
 
       var config = {
