@@ -74,7 +74,10 @@ angular.module('bibliotecasSystemApp')
 
     $scope.$on('atualizarListaAutor',function(){
 
-      var config = null,
+      var config = {
+              autor : null,
+              msg : null
+            },
           sucess = function(config){
             $scope.autores = config.autores;
           },
