@@ -69,8 +69,17 @@ angular.module('bibliotecasSystemApp')
     });
 
     $scope.$on('atualizarListaColecao',function(){
-      obterListaParaComboBox();
+//      obterListaParaComboBox();
+        var config = {},
+          success = function(config){
+            $scope.colecoes = config.colecoes;
+          },error = function(err){
+            console.log(err);
+          };
+      obterDocumentosPorTipo.colecoes(config).then(success,error);
+
     });
+
 
     $scope.$on('atualizarListaAutor',function(){
 
