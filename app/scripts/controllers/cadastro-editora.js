@@ -8,10 +8,14 @@
  * Controller of the bibliotecasSystemApp
  */
 angular.module('bibliotecasSystemApp')
-  .controller('CadastroEditoraCtrl', function ($scope,$modalInstance,doc) {
+  .controller('CadastroEditoraCtrl', function ($scope,$modalInstance,doc,$rootScope) {
 
     $scope.editora = {
       tipoDocumento : 'EDITORA'
+    };
+
+    var atualizarListaEditoraNoCadastroLivro = function(){
+        $rootScope.$broadcast('atualizarListaEditora');
     };
 
     $scope.salvarEditora = function(){
@@ -25,7 +29,9 @@ angular.module('bibliotecasSystemApp')
         $scope.editora = null;
       };
 
-      doc.salvar($scope.editora).then(sucess, erro);
+      doc.salvar($scope.editora)
+      .then(sucess, erro)
+      .then(atualizarListaEditoraNoCadastroLivro);
     };
 
     $scope.close = function(){

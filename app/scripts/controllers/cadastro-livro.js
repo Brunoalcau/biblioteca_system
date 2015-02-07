@@ -68,6 +68,17 @@ angular.module('bibliotecasSystemApp')
       obterDocumentosPorTipo.colecoes(config).then(success,error);
     });
 
+    $scope.$on('atualizarListaEditora',function(){
+            var config = {},
+              success = function(config){
+                $scope.editoras = config.editoras;
+              },error = function(err){
+                console.log(err);
+              };
+          obterDocumentosPorTipo.editoras(config).then(success,error);
+
+     });
+
     $scope.$on('atualizarListaColecao',function(){
 //      obterListaParaComboBox();
         var config = {},
